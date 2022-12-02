@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script defer src="js/main.js"></script>
+    <link defer rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <h1>Hangman</h1>
+    <div class="main-container">
+        <div class="hangman"></div>
+        <div class="wrong-guesses"></div>
+        <div class="hidden-word hide-dash"></div>
+    </div>
+    
+    <div class="guess-container">
+        Guess a Letter
+        <br />
+        <input type="text">
+    <button type="submit" id="guess-btn">Guess</button>
+    </div>
+    
+
+    <canvas id="canvas">å</canvas>
+</body>
+</html>

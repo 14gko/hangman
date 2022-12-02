@@ -1,0 +1,134 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+*{
+    font-family: nanu
+}
+
+
+body{
+    background-color: #849DAB;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-container{
+    position: absolute;
+    transform: translate(-50%, -70%);
+    top: 50%;
+    left: 50%;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    height: 50vh;
+    width: 40vw;
+
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    
+
+
+    /* position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.959);
+    /* doesnt change size, but vw does */
+    /* height: 30vh; 
+    width: 50vh;
+    border-radius: 5px; */ 
+}
+
+.hangman{
+    background-color: white;
+    border: 2px solid rgb(129, 133, 148);
+    border-radius: 10px;
+    /* height: 10vh;
+    width: 10vw; */
+}
+
+.wrong-guesses{
+    background-color: white;
+    border: 2px solid rgb(129, 133, 148);
+    border-radius: 10px;
+
+
+    overflow: hidden;
+    text-align: center;
+    letter-spacing: 15px;
+    word-wrap: break-word;
+    /* height: 10vh;
+    width: 10vw; */
+}
+
+.hidden-word{
+    background-color: white;
+    grid-column: 1/3;
+    border: 3px solid rgb(129, 133, 148);
+    
+    
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 15vh;
+    letter-spacing: 15px;
+    font-size: 25px;
+    
+}
+
+.guess-container{
+    border: 2px solid red;
+    width:  30vw;
+    height: 5vh;
+    position: absolute;
+    transform: translate(-50%, 300%);
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    
+}
+.hide{
+    display: none;
+}
+
+/* input{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+button{
+    position: absolute;
+    bottom: .01em;
+    left: 275px;
+    margin: 10px;
+    padding: 1px;
+} */
+
+
+/* #canvas1 {
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+} */
+
+/* 
+
+.head{
+    position: absolute;
+    top: 0;
+    left: 100px;
+    right: 0;
+    bottom: 0;
+    font-size: 150px;
+} */
