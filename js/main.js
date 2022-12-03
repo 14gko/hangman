@@ -1,19 +1,23 @@
 //array containing 10 words
 
 
-const words = ['APHAGIA', 'GRUMMET', 'VITALS', 'SUBLIME', 'ECONOMIC', 'AVALANCE', 'NOVEL', 'NOTORIOUS', 'QUINTESSENTIAL', 'ANOMALOUS'];
+const words = ['APHAGIA', 'GRUMMET', 'VITALS', 'SUBLIME', 'ECONOMIC', 'AVALANCHE', 'NOVEL', 'NOTORIOUS', 'QUINTESSENTIAL', 'ANOMALOUS'];
 let currWord = '';
 
 
 const mainCont = document.querySelector('.main-container');
+const guessCont = document.querySelector('.guess-container')
 const wrgGuess = document.querySelector('.wrong-guesses');
 const hiddenWord = document.querySelector('.hidden-word');
 const letterInput = document.querySelector('input');
 const guessBtn = document.querySelector('#guess-btn');
+const hideCont = document.querySelector('.hide-cont');
 const canvas = document.querySelector('#canvas');
 
-let wrgText = wrgGuess.innerText;
-let hiddenText = hiddenWord.innerText;
+
+//seems like these dont work for some reason?
+// let wrgText = wrgGuess.innerText;
+// let hiddenText = hiddenWord.innerText;
 
 function isLetter(char){
     return char.toUpperCase() !== char.toLowerCase();
@@ -25,18 +29,19 @@ guessBtn.addEventListener('click', function(){
     let letters = currWord.split('');
     let dashArr = hiddenWord.innerText.split('');
     letters.forEach(function(letter, idx){
-        if (isLetter(letter)){
+        if (isLetter(currGuess)){
             if (currGuess.toUpperCase() === letter){
                 dashArr[idx] = letter;
-                hiddenWord.innerText = dashArr.join('');
+                hiddenWord.innerHTML = dashArr.join('');
             }
-            else{
+            else if(currGuess.toUpperCase() !== letter){
                 //this should appear near the input window instead of in the console
                 console.log("WRONG!");
                 
+                //for some reason using touppercase messes up this code so bad? 
                 //then put the wrong guess in the wrong guess container
-                if (wrgText.indexOf(letter) < 0){
-                    wrgGuess.innerText += letter
+                if (wrgGuess.innerHTML.indexOf(currGuess) < 0){
+                    wrgGuess.innerHTML += currGuess;
                 }
             }
         }
@@ -44,11 +49,20 @@ guessBtn.addEventListener('click', function(){
             console.log("Invalid input")
         }
     })
+    letterInput.value = '';
 })
 
 function initialize(){
     let lives = 6;
+    //hide guess container until new game pressed
+    guessCont.classList.add('hide-cont');
 
+    //find out how to replace text with something else when game is initilalized, over the guess container
+    //also when new game is pressed remove hide-cont class
+
+    // function newGame(){
+    //     ///add code that renders when new game is pressed
+    // }
     
 }
 
