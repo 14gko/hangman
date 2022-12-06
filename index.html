@@ -8,8 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-    <script
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Nanum+Pen+Script&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Solway&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
@@ -18,22 +20,56 @@
 </head>
 <body>
     <h1>Hangman</h1>
-    <div class="main-container">
-        <div class="hangman"></div>
-        <div class="wrong-guesses">
-            <span id="guessed">Incorrect Guesses:</span>
+    <div class="main-container hide">
+        <div class="human-container">
+            <div class="humans">
+                <div id="you">
+                    <div class="head">o</div>
+                    <div class="body">u</div>
+                </div>
+                <div class="friends" id="f1">
+                    <div class="head">o</div>
+                    <div class="body">u</div>
+                </div>
+                <div class="friends" id="f2">
+                    <div class="head">o</div>
+                    <div class="body">u</div>
+                </div>
+                <div class="friends" id="f3">
+                    <div class="head">o</div>
+                    <div class="body">u</div>
+                </div>
+                <div class="friends" id="f4">
+                    <div class="head">o</div>
+                    <div class="body">u</div>
+                </div>
+                <div class="friends" id="f5">
+                    <div class="head">o</div>
+                    <div class="body">u</div>
+                </div>
+                <div class="friends" id="f6">
+                    <div class="head">o</div>
+                    <div class="body">u</div>
+                </div>
+            </div>
         </div>
-        <div class="hidden-word hide-dash"></div>
+        <div class="letter-container">
+            <span id="guessed-text">Incorrect Guesses:</span>
+            <br>
+            <span class="wrong-letters"></span>
+        </div>
+        <div class="chosen-word hide-dash"></div>
     </div>
     
-    <div class="guess-container">
-        Guess a Letter
-        <br />
+    <div class="guess-container hide">
+        <div id="guess-text">Guess a Letter</div>
         <input type="text">
-    <button type="submit" id="guess-btn">Guess</button>
+        <button type="submit" id="guess-btn">Guess</button>
+    </div>
+    <div class="new-game-container">
+        <div id="game-text">You and your friends are english majors, prove your intelligence or your friends will leave you ):</div>
+        <button type="button" class="new-game-button">New Game</button>
     </div>
     
-
-    <canvas id="canvas">å</canvas>
 </body>
 </html>
