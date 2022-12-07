@@ -14,10 +14,7 @@ const words = {
 }
 
 //array containing keys of the object words
-const wordsArr = Object.keys(words);
- 
-// const words = ['APHAGIA', 'GRUMMET', 'VITALS', 'SUBLIME', 'ECONOMIC', 'AVALANCHE', 'NOVEL', 'NOTORIOUS', 'QUINTESSENTIAL', 'ANOMALOUS'];
- 
+const wordsArr = Object.keys(words); 
 
   /*----- state variables -----*/
 
@@ -36,11 +33,11 @@ const guessBtn = document.querySelector('#guess-btn');
 const ngCont = document.querySelector('.new-game-container')
 const newGameBtn = document.querySelector('.new-game-button');
 const hideCont = document.querySelector('.hide-cont');
-const canvas = document.querySelector('#canvas');
 const gameText = document.querySelector('#game-text');
 const wrgText = document.querySelector('#guessed-text');
 const friends = document.querySelector('.friends');
 const hint = document.querySelector('#hint');
+const definition = document.querySelector('#definition');
   
   /*----- event listeners -----*/
 
@@ -50,7 +47,7 @@ newGameBtn.addEventListener('click', function(){
     guessCont.classList.toggle('hide');
     initialize();
 })
-  guessBtn.addEventListener('click', function(){
+guessBtn.addEventListener('click', function(){
     checkLetter();
     checkWin();
     frown();
@@ -62,11 +59,12 @@ newGameBtn.addEventListener('click', function(){
 
 function initialize(){
     lives = 6;
+    definition.innerText = '';
+    wrgLetters.innerHTML = '';
     initFriends();
     generateWord();
     displayDefinition();
     frown();
-    wrgLetters.innerHTML = '';
 }
 
 function initFriends(){
@@ -82,8 +80,7 @@ function generateWord(){
 }
 
 function displayDefinition(){
-    hint.innerText += " " + 
-    words[currWord];
+    definition.innerText += " " + words[currWord];
 }
 
 function frown(){
@@ -95,12 +92,13 @@ function frown(){
         mouth.style.transform = 'rotate(-.25turn)';
     }
 }
-
+//check if input matches any letters in the chosen word 
 function checkLetter(){
+    //
     let letterCount = 0;
     currGuess = letterInput.value;
-    letters = currWord.split('');
-    dashArr = chosenWord.innerText.split('');
+    letters = currWord.split(''); //splits the current word into array
+    dashArr = chosenWord.innerText.split(''); //splits the dashes from html into array
     
     //iterate through letters array
     letters.forEach(function(letter, idx){
