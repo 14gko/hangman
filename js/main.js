@@ -92,6 +92,7 @@ function frown(){
         mouth.style.transform = 'rotate(-.25turn)';
     }
 }
+
 //check if input matches any letters in the chosen word 
 function checkLetter(){
     //
@@ -152,7 +153,6 @@ function loseLife(){
 
 //detects if you have won or lost
 function checkWin(){
-    console.log(lives);
     if (lives > 0 && chosenWord.innerHTML.indexOf('_') < 0){
         gameText.innerHTML = `YOU WIN! You kept ${lives} of your friends!! The word was <span>${currWord}</span>`;
         toggleResult();
